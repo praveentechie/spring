@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots />
+						<id>snapshots</id>
+						<name>plugins-release</name>
+						<url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+				<pluginRepository>
+						<id>libs-release</id>
+						<url>https://repo.maven.apache.org/maven2</url>
+						<releases>
+							<enabled>true</enabled>
+						</releases>
+						<snapshots>
+							<enabled>false</enabled>
+							<updatePolicy>always</updatePolicy>
+							<checksumPolicy>fail</checksumPolicy>
+						</snapshots>
+				</pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
