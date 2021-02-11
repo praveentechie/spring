@@ -1,5 +1,8 @@
 package com.example.ap.mongodriver.controller;
 
+import static com.example.ap.mongodriver.domain.Todo.ALPHA_NUMERIC_ID;
+import static com.example.ap.mongodriver.domain.Todo.NUMERIC_ID;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -25,11 +28,16 @@ public class TodoController {
     }
 
     public Todo createTodo(Todo todo) {
+        Todo model = new Todo();
+        model.setCompleted(todo.getCompleted());
+        model.setDescription(todo.getDescription());
+        System.out.println(model);
         return todoRepository.save(todo);
     }
 
     public Todo updateTodo(String id, Todo todo) {
         todo.setId(id);
+        todoRepository.updateTestMap(id, ALPHA_NUMERIC_ID, "TEST");
         return todoRepository.save(todo);
     }
 

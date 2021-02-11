@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.example.ap.mongodriver.domain.Todo;
 
 @Repository
-public interface TodoRepository extends CrudRepository<Todo, String> {
+public interface TodoRepository extends CrudRepository<Todo, String>, TodoRepositoryCustom {
     List<Todo> findAll();
 }

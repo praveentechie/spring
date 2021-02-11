@@ -7,6 +7,6 @@ import javax.ws.rs.ext.ExceptionMapper;
 public class StandardExceptionMapper implements ExceptionMapper<StandardException> {
     @Override
     public Response toResponse(StandardException e) {
-        return Response.status(e.getStatus()).entity(e.getMessage()).type(MediaType.APPLICATION_JSON).build();
+        return Response.status(e.getStatus()).entity(e.getPayload()).type(MediaType.APPLICATION_JSON).build();
     }
 }
